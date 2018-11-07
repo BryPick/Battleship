@@ -7,8 +7,8 @@
                 <h1 id="main-title">Battleship</h1>
                 <div id="account-buttons">
                     <form>
-                        <button type="button" class="btn btn-danger">Login</button>
-                        <button type="button" class="btn btn-danger">Create New Account</button>
+                        <button type="button" class="btn btn-danger" id="login-btn">Login</button>
+                        <button type="button" class="btn btn-danger" id="acct-btn">Create New Account</button>
                     </form>
                 </div>
             </div>
