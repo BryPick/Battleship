@@ -1,3 +1,42 @@
+/* CLASSES */
+.pw-toggle-group {
+  position: relative;
+}
+
+.pw-toggle-group a {
+  position: absolute;
+  right: 1em;
+  top: 0.5em;
+  color: #23527C;
+}
+
+.pw-toggle-group a.pw-hide {
+  color: #23527C;
+}
+
+.pw-toggle-group a:hover,
+.pw-toggle-group a:focus {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.sub-title {
+  font-family: $font-family-headings;
+  color: $heading-color;
+  font-size: 100pt;
+  text-align: center;
+}
+
+.submit-btn {
+  text-align: center;
+}
+
+.user-forms {
+  display: block;
+  margin: auto;
+}
+
+/* IDs */
 #main-landing {
   margin: auto;
   text-align: center;

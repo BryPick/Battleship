@@ -7,21 +7,21 @@
 /*
 * constructor
 * */
-function Crud() {
+function AjaxData() {
     'use strict';
 }//end Crud constructor
 
-Crud.prototype.constructor = Crud;
+AjaxData.prototype.constructor = AjaxData;
 
 /* function to handle all get/post requests
  * @param method - 'get' or 'post' request
  * @param data - the data to send -> {}
  * */
-Crud.prototype.handleData = function(method, data) {
+AjaxData.prototype.handleData = function(method, data) {
     return $.ajax({
         type: method,
         data: data,
         dataType: 'json',
-        url: 'mid.php'
+        url: '/mid.php'
     });
 };//end Crud.getData

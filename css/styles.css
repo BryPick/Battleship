@@ -8,21 +8,64 @@ html, body {
 }
 
 body {
-  background-image: url("../img/shipmetal.png");
+  background: url("../img/shipmetal.png") no-repeat;
   background-size: cover;
-  background-repeat: no-repeat;
+}
+
+form {
+  margin: auto;
+  width: 500px;
 }
 
 .vertical-center {
   min-height: 100%;
-  /* Fallback for browsers do NOT support vh unit */
   min-height: 100vh;
-  /* These two lines are counted as one :-)       */
   display: flex;
   align-items: center;
 }
 
+/* CLASSES */
+.pw-toggle-group {
+  position: relative;
+}
+
+.pw-toggle-group a {
+  position: absolute;
+  right: 1em;
+  top: 0.5em;
+  color: #23527C;
+}
+
+.pw-toggle-group a.pw-hide {
+  color: #23527C;
+}
+
+.pw-toggle-group a:hover,
+.pw-toggle-group a:focus {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.sub-title {
+  font-family: "MachineStd-Bold", sans-serif;
+  color: #e0a93d;
+  font-size: 100pt;
+  text-align: center;
+}
+
+.submit-btn {
+  text-align: center;
+}
+
+.user-forms {
+  display: block;
+  margin: auto;
+}
+
+/* IDs */
 #main-landing {
+  margin: auto;
+  text-align: center;
   width: 95%;
 }
 
@@ -30,16 +73,6 @@ body {
   font-family: "MachineStd-Bold", sans-serif;
   font-size: 150pt;
   color: #e0a93d;
-}
-
-.vertical-center {
-  min-height: 100%;
-  /* Fallback for browsers do NOT support vh unit */
-  min-height: 100vh;
-  /* These two lines are counted as one :-)       */
-  text-align: center;
-  display: flex;
-  align-items: center;
 }
 
 /*# sourceMappingURL=styles.css.map */
