@@ -1,5 +1,5 @@
 <?php
-    if($_GET['func'] || $_POST['func']) {
+    if(isset($_GET['func']) || isset($_POST['func'])) {
         foreach(glob("./service/".$_REQUEST['service']."/*.php") as $filename) {
             require $filename;
         }

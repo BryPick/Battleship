@@ -1,4 +1,27 @@
 /* CLASSES */
+.create-acct-btns {
+  text-align: center;
+}
+
+.done-word {
+  display: none;
+}
+
+.forms {
+  margin: auto;
+  width: 500px;
+}
+
+.login-btns {
+  text-align: center;
+}
+
+.pwd-chars-msg {
+  color: $red-bg-color;
+  display: none;
+  word-wrap: break-word;
+}
+
 .pw-toggle-group {
   position: relative;
 }
@@ -27,10 +50,6 @@
   text-align: center;
 }
 
-.submit-btn {
-  text-align: center;
-}
-
 .user-forms {
   display: block;
   margin: auto;
@@ -47,4 +66,39 @@
   font-family: $font-family-headings;
   font-size: 150pt;
   color: $heading-color;
+}
+
+#user-msg {
+  display: none;
+}
+
+/* BOOTSTRAP OVERRIDES */
+.alert-danger {
+  background-color: $red-bg-color;
+  border-color: $red-border-color;
+  color: $font-body-color;
+}
+
+.alert-success {
+  background-color: $green-bg-color;
+  border-color: $green-border-color;
+  color: $font-body-color;
+}
+
+.btn-danger {
+  background: $red-bg-color;
+  border-color: $red-border-color;
+}
+
+.btn-danger:hover {
+  background: $red-hover-color;
+}
+
+.btn-success {
+  background: $green-bg-color;
+  border-color: $green-border-color;
+}
+
+.btn-success:hover {
+  background: $green-hover-color;
 }

@@ -12,11 +12,6 @@ body {
   background-size: cover;
 }
 
-form {
-  margin: auto;
-  width: 500px;
-}
-
 .vertical-center {
   min-height: 100%;
   min-height: 100vh;
@@ -25,6 +20,29 @@ form {
 }
 
 /* CLASSES */
+.create-acct-btns {
+  text-align: center;
+}
+
+.done-word {
+  display: none;
+}
+
+.forms {
+  margin: auto;
+  width: 500px;
+}
+
+.login-btns {
+  text-align: center;
+}
+
+.pwd-chars-msg {
+  color: #DE1A1A;
+  display: none;
+  word-wrap: break-word;
+}
+
 .pw-toggle-group {
   position: relative;
 }
@@ -53,10 +71,6 @@ form {
   text-align: center;
 }
 
-.submit-btn {
-  text-align: center;
-}
-
 .user-forms {
   display: block;
   margin: auto;
@@ -73,6 +87,41 @@ form {
   font-family: "MachineStd-Bold", sans-serif;
   font-size: 150pt;
   color: #e0a93d;
+}
+
+#user-msg {
+  display: none;
+}
+
+/* BOOTSTRAP OVERRIDES */
+.alert-danger {
+  background-color: #DE1A1A;
+  border-color: #7F2211;
+  color: #F4F4F8;
+}
+
+.alert-success {
+  background-color: #008148;
+  border-color: #5C7F4C;
+  color: #F4F4F8;
+}
+
+.btn-danger {
+  background: #DE1A1A;
+  border-color: #7F2211;
+}
+
+.btn-danger:hover {
+  background: #BF1616;
+}
+
+.btn-success {
+  background: #008148;
+  border-color: #5C7F4C;
+}
+
+.btn-success:hover {
+  background: #00BF6B;
 }
 
 /*# sourceMappingURL=styles.css.map */

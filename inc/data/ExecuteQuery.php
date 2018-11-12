@@ -3,6 +3,7 @@
 class ExecuteQuery {
 
     function __construct() {
+        require_once(__DIR__.'/battleshipdbconnect.php');
         $this->Database = new Database();
     }//end ExecuteQuery constructor
 
