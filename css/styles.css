@@ -10,6 +10,7 @@ html, body {
 body {
   background: url("../img/shipmetal.png") no-repeat;
   background-size: cover;
+  color: #F4F4F8;
 }
 
 .vertical-center {
@@ -17,6 +18,12 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
+}
+
+/* PARENT CSS */
+.sub-logo, .main-logo {
+  font-family: "MachineStd-Bold", sans-serif;
+  color: #e0a93d;
 }
 
 /* CLASSES */
@@ -35,6 +42,10 @@ body {
 
 .login-btns {
   text-align: center;
+}
+
+.main-logo {
+  font-size: 150pt;
 }
 
 .pwd-chars-msg {
@@ -64,6 +75,13 @@ body {
   text-decoration: none;
 }
 
+.sub-logo {
+  font-size: 75pt;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
 .sub-title {
   font-family: "MachineStd-Bold", sans-serif;
   color: #e0a93d;
@@ -77,16 +95,21 @@ body {
 }
 
 /* IDs */
+#battleship-load {
+  display: none;
+  margin: auto;
+}
+
+#lobby-container {
+  position: relative;
+  height: 100%;
+  margin: 0 5%;
+}
+
 #main-landing {
   margin: auto;
   text-align: center;
   width: 95%;
-}
-
-#main-title {
-  font-family: "MachineStd-Bold", sans-serif;
-  font-size: 150pt;
-  color: #e0a93d;
 }
 
 #user-msg {

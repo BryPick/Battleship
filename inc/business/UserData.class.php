@@ -6,7 +6,14 @@ class UserData {
     }
 
     function checkCreds($data) {
-
+        $sqlQuery = 'SELECT * FROM users WHERE username = :username';
+        $params = array(':username' => $data['username']);
+        $result = $this->ExecuteQuery->executeQuery($sqlQuery, $params, 'select');
+        if($result) {
+            return $result;
+        }else {
+            return null;
+        }
     }//end checkCreds
 
     function checkExistingUser($data) {
@@ -14,9 +21,9 @@ class UserData {
         $params = array(':username' => $data['username']);
         $result = $this->ExecuteQuery->executeQuery($sqlQuery, $params, 'select');
         if($result) {
-            return array('userExists' => true);
+            return true;
         }else {
-            return array('userExists' => false);
+            return false;
         }
     }//end checkExistingUser
 
@@ -31,8 +38,8 @@ class UserData {
             ':loggedIn' => $data['loggedIn']
         );
         $result = $this->ExecuteQuery->executeQuery($sqlQuery, $params, 'insert');
-        if($params) {
-            return $params;
+        if($result) {
+            return $result;
         }else {
             return null;
         }

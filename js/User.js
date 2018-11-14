@@ -11,6 +11,7 @@ User.prototype.constructor = User;
 
 //User init function
 User.prototype.init = function() {
+    this.checkCreds();
     this.checkEightChars();
     this.checkSpecialChars();
     this.createUser();
@@ -46,18 +47,31 @@ User.prototype.checkEightChars = function() {
     });
 };//end User.checkEightChars
 
-//See if a username that a user is trying to create already exists
-User.prototype.checkExistingUser = function() {
-
-
-};//end User.checkExistingUser
-
 //Check the password and username
-User.prototype.checkCreds = function(username, password) {
-    var data = {username: username, password: password};
-    var checkedCreds = user.ajaxCall('get', {service: 'user', func: 'checkCreds', data: data});
-    $.when(checkedCreds).then(function(checkedCredsRes) {
-
+User.prototype.checkCreds = function() {
+    $('#login-btn').on('click', function() {
+        var username = $('#enter-username').val();
+        var password = $('#enter-password').val();
+        if(username === '' || password == '') {
+            user.showUserMsg('Not all fields were entered', 'alert-warning');
+        }else {
+            var data = {username: username, password: password};
+            var checkedCreds = user.ajaxCall('get', {service: 'user', func: 'checkCreds', data: data});
+            $('.user-forms').hide();
+            $('#battleship-load').show();
+            $.when(checkedCreds).then(function (checkedCredsRes) {
+                $('#battleship-load').hide();
+                $('.user-forms').show();
+                if (checkedCredsRes['credsCorrect']) {
+                    user.showUserMsg('Success! Logging you in!', 'alert-success');
+                    window.location.replace("lobby.php");
+                } else {
+                    user.showUserMsg('Username or password incorrect!', 'alert-danger');
+                }
+            }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                user.showUserMsg('Fail! Contact Admin!', 'alert-danger');
+            });
+        }
     });
 };//end User.checkCreds
 
@@ -80,43 +94,59 @@ User.prototype.checkSpecialChars = function() {
 User.prototype.createUser = function() {
     $('#create-acct-btn').on('click', function() {
         var username = $("#create-username").val();
-
-        var usernameData = {username: username};
-        var checkExistingUser = user.ajaxCall('post', {service: 'user', func: 'checkExistingUser', data: usernameData});
-        $.when(checkExistingUser).then(function(checkExistingUser) {
-            if(checkExistingUser['userExists'] == false) {
-                var role = 'user';
-                var username = $('#create-username').val();
-                var password = $('#create-password').val();
-                var confPass = $('#conf-password').val();
-                var icon = 'anchor.svg';
-                var isLoggedIn = 'Yes';
-
-                if($('#eight-chars-msg').css('color') == 'rgb(222, 26, 26)' || $('#spec-chars-msg').css('color') == 'rgb(222, 26, 26)') {
-                    user.showUserMsg('Password does not meet all requirements!', 'alert-danger');
-                }else {
-                    if(password !== confPass) {
-                        user.showUserMsg('Passwords don\'t match!','alert-danger');
-                    }else {
-                        var data = {role: role, username: username, password: password, icon: icon, loggedIn: isLoggedIn};
-                        var createUser = user.ajaxCall('post', {service: 'user', func: 'createUser', data: data});
-                        $.when(createUser).then(function(createUserRes) {
-                            if(createUserRes) {
-                                user.showUserMsg('Success! User Created!', 'alert-success');
-                            }else {
-                                user.showUserMsg('Fail! Contact Admin!', 'alert-danger');
-                            }
-                        }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
-                            user.showUserMsg('Fail! Contact Admin!', 'alert-danger');
-                        });
-                    }
-                }
+        var password = $("#create-password").val();
+        var confPass = $("#conf-password").val();
+        if(username === '' || password === '' || confPass === '') {
+            user.showUserMsg('Not all fields were entered', 'alert-warning');
+        }else {
+            if($('#eight-chars-msg').css('color') == 'rgb(222, 26, 26)' || $('#spec-chars-msg').css('color') == 'rgb(222, 26, 26)') {
+                user.showUserMsg('Password does not meet all requirements!', 'alert-danger');
             }else {
-                user.showUserMsg('Username Taken!', 'alert-warning');
+                if (password !== confPass) {
+                    user.showUserMsg('Passwords don\'t match!', 'alert-danger');
+                } else {
+                    var usernameData = {username: username};
+                    var checkExistingUser = user.ajaxCall('post', {service: 'user', func: 'checkExistingUser', data: usernameData});
+                    $('.user-forms').hide();
+                    $('#battleship-load').show();
+                    $.when(checkExistingUser).then(function (checkExistingUser) {
+                        $('#battleship-load').hide();
+                        $('.user-forms').show();
+                        if (checkExistingUser['userExists'] == false) {
+                            var role = 'user';
+                            var username = $('#create-username').val();
+                            var password = $('#create-password').val();
+                            var confPass = $('#conf-password').val();
+                            var icon = 'anchor.svg';
+                            var isLoggedIn = 'Yes';
+
+                            var data = {
+                                role: role,
+                                username: username,
+                                password: password,
+                                icon: icon,
+                                loggedIn: isLoggedIn
+                            };
+                            var createUser = user.ajaxCall('post', {service: 'user', func: 'createUser', data: data});
+                            $.when(createUser).then(function (createUserRes) {
+                                if (createUserRes) {
+                                    user.showUserMsg('Success! User created!', 'alert-success');
+                                } else {
+                                    user.showUserMsg('Fail! Contact admin!', 'alert-danger');
+                                }
+                            }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                                user.showUserMsg('Fail! Contact admin!', 'alert-danger');
+                            });
+
+                        } else {
+                            user.showUserMsg('Username taken!', 'alert-warning');
+                        }
+                    }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                        user.showUserMsg('Fail! Contact admin!', 'alert-danger');
+                    });
+                }
             }
-        }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
-            user.showUserMsg('Fail! Contact Admin!', 'alert-danger');
-        });
+        }
     });
 };//end User.createUser
 
@@ -171,7 +201,11 @@ User.prototype.showPassText = function() {
 User.prototype.showUserMsg = function(msg, type) {
     var userErrMsg = $('#user-msg');
     userErrMsg.show();
+    userErrMsg.removeClass('alert-danger');
+    userErrMsg.removeClass('alert-warning');
+    userErrMsg.removeClass('alert-success');
     userErrMsg.addClass(type);
+
     userErrMsg.text(msg);
 };//end User.showUserError
 

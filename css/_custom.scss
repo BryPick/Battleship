@@ -1,3 +1,9 @@
+/* PARENT CSS */
+%main-logo {
+  font-family: $font-family-headings;
+  color: $heading-color;
+}
+
 /* CLASSES */
 .create-acct-btns {
   text-align: center;
@@ -14,6 +20,11 @@
 
 .login-btns {
   text-align: center;
+}
+
+.main-logo {
+  @extend %main-logo;
+  font-size: 150pt;
 }
 
 .pwd-chars-msg {
@@ -43,6 +54,14 @@
   text-decoration: none;
 }
 
+.sub-logo {
+  @extend %main-logo;
+  font-size: 75pt;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
 .sub-title {
   font-family: $font-family-headings;
   color: $heading-color;
@@ -56,16 +75,21 @@
 }
 
 /* IDs */
+#battleship-load {
+  display: none;
+  margin: auto;
+}
+
+#lobby-container {
+  position: relative;
+  height: 100%;
+  margin: 0 5%;
+}
+
 #main-landing {
   margin: auto;
   text-align: center;
   width: 95%;
-}
-
-#main-title {
-  font-family: $font-family-headings;
-  font-size: 150pt;
-  color: $heading-color;
 }
 
 #user-msg {
