@@ -18,6 +18,12 @@
   width: 500px;
 }
 
+.lobby-heading {
+  color: $font-body-color;
+  font-family: $lobby-font;
+  font-size: $lobby-font-size;
+}
+
 .login-btns {
   text-align: center;
 }
@@ -41,24 +47,25 @@
   position: absolute;
   right: 1em;
   top: 0.5em;
-  color: #23527C;
+  color: black;
 }
 
 .pw-toggle-group a.pw-hide {
-  color: #23527C;
+  color: black;
 }
 
 .pw-toggle-group a:hover,
 .pw-toggle-group a:focus {
   cursor: pointer;
   text-decoration: none;
+  color: black;
 }
 
 .sub-logo {
   @extend %main-logo;
-  font-size: 75pt;
+  font-size: 7vw;
   position: absolute;
-  bottom: 0;
+  bottom: 1%;
   left: 0;
 }
 
@@ -80,16 +87,91 @@
   margin: auto;
 }
 
+#challenge-btns {
+  text-align: center;
+  margin-top: 2vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+#challenge-table {
+  background: $lobby-divs-color;
+}
+
+#challenge-table table {
+  background: $lobby-divs-color;
+  margin: 0;
+}
+
+#chat-box {
+  background: rgba(0,0,0,.75);
+  font-weight: bold;
+  color: $heading-color;
+  height: 75%;
+  overflow: auto;
+}
+
+#input-chat-text {
+  margin-top: 5%;
+  margin-bottom: 0;
+}
+
+#lobby-chat {
+  position: absolute;
+  left: 0;
+  bottom: 25%;
+  width: 30%;
+  height: 25%;
+}
+
 #lobby-container {
   position: relative;
   height: 100%;
-  margin: 0 5%;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+#lobby-table {
+  background: $lobby-divs-color;
+  flex: 1 1 auto;
 }
 
 #main-landing {
   margin: auto;
   text-align: center;
   width: 95%;
+}
+
+/*#settings-btn {
+  float: left;
+  margin-left: 5%;
+}
+
+#start-match-btn {
+  float: right;
+  margin-right: 5%;
+}*/
+
+#user-challenge {
+  width: 30%;
+  height: 25%;
+  position: absolute;
+  left: 0;
+  top: 5%;
+  bottom: 1%;
+  display: flex;
+  flex-flow: column;
+}
+
+#user-lobby {
+  position: absolute;
+  right: 0;
+  top: 5%;
+  bottom: 1%;
+  height: 90%;
+  width: 50%;
+  display: flex;
+  flex-flow: column;
 }
 
 #user-msg {
@@ -125,4 +207,14 @@
 
 .btn-success:hover {
   background: $green-hover-color;
+}
+
+.table {
+  color: black;
+  font-weight: bold;
+  background-color: $lobby-divs-color;
+}
+
+textarea {
+  resize: none;
 }
