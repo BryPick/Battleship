@@ -4,7 +4,11 @@
             require $filename;
         }
         $serviceFunction = $_REQUEST['func'];
-        $request = @call_user_func($serviceFunction,$_REQUEST['data']);
+        if(isset($_REQUEST['data'])) {
+            $request = @call_user_func($serviceFunction,$_REQUEST['data']);
+        }else {
+            $request = @call_user_func($serviceFunction);
+        }
 
         if($request) {
             echo json_encode($request);

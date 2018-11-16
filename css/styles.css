@@ -24,18 +24,32 @@ body {
 }
 
 /* PARENT CSS */
+.table, #user-menu-body, #login-redirect, #login-redirect a, #login-redirect a:hover {
+  color: #E8EBF7;
+  font-weight: bold;
+}
+
 .sub-logo, .main-logo {
   font-family: "MachineStd-Bold", sans-serif;
   color: #e0a93d;
 }
 
 /* CLASSES */
+.chat-err-msg {
+  color: #DE1A1A;
+}
+
 .create-acct-btns {
   text-align: center;
 }
 
 .done-word {
   display: none;
+}
+
+.err-msg {
+  margin: auto;
+  text-align: center;
 }
 
 .forms {
@@ -55,6 +69,11 @@ body {
 
 .main-logo {
   font-size: 150pt;
+}
+
+.modal-content {
+  background-color: black;
+  color: #E8EBF7;
 }
 
 .pwd-chars-msg {
@@ -104,6 +123,10 @@ body {
   margin: auto;
 }
 
+.user-menu-option {
+  cursor: pointer;
+}
+
 /* IDs */
 #battleship-load {
   display: none;
@@ -118,11 +141,11 @@ body {
 }
 
 #challenge-table {
-  background: rgba(232, 235, 247, 0.25);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 #challenge-table table {
-  background: rgba(232, 235, 247, 0.25);
+  background: rgba(0, 0, 0, 0.5);
   margin: 0;
 }
 
@@ -130,8 +153,15 @@ body {
   background: rgba(0, 0, 0, 0.75);
   font-weight: bold;
   color: #e0a93d;
-  height: 75%;
+  min-height: 75%;
+  max-height: 75%;
   overflow: auto;
+}
+
+#err-heading {
+  font-family: "MachineStd-Bold", sans-serif;
+  color: #e0a93d;
+  font-size: 50pt;
 }
 
 #input-chat-text {
@@ -142,7 +172,7 @@ body {
 #lobby-chat {
   position: absolute;
   left: 0;
-  bottom: 25%;
+  bottom: 30%;
   width: 30%;
   height: 25%;
 }
@@ -155,8 +185,23 @@ body {
 }
 
 #lobby-table {
-  background: rgba(232, 235, 247, 0.25);
+  background: rgba(0, 0, 0, 0.5);
   flex: 1 1 auto;
+}
+
+#lobby-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+#login-redirect, #login-redirect a, #login-redirect a:hover {
+  color: #E8EBF7;
+  text-decoration: none;
+  font-size: 20pt;
+}
+
+#logout-menu-option {
+  color: #DE1A1A;
 }
 
 #main-landing {
@@ -165,15 +210,6 @@ body {
   width: 95%;
 }
 
-/*#settings-btn {
-  float: left;
-  margin-left: 5%;
-}
-
-#start-match-btn {
-  float: right;
-  margin-right: 5%;
-}*/
 #user-challenge {
   width: 30%;
   height: 25%;
@@ -190,10 +226,25 @@ body {
   right: 0;
   top: 5%;
   bottom: 1%;
-  height: 90%;
+  min-height: 90%;
+  max-height: 90%;
   width: 50%;
+  overflow: auto;
   display: flex;
   flex-flow: column;
+}
+
+#user-menu-body {
+  text-align: center;
+}
+
+#user-menu-btn {
+  margin-bottom: 1rem;
+}
+
+#user-menu-label {
+  color: #e0a93d;
+  text-align: center;
 }
 
 #user-msg {
@@ -231,10 +282,12 @@ body {
   background: #00BF6B;
 }
 
+.close, .close:hover {
+  color: #E8EBF7;
+}
+
 .table {
-  color: black;
-  font-weight: bold;
-  background-color: rgba(232, 235, 247, 0.25);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 textarea {

@@ -51,7 +51,8 @@
     require_once(__DIR__.'/layouts/bottom_layout.php');
 ?>
 
-<script type="text/javascript" src="js/User.js"></script>
+<script type="text/javascript" src="js/objects/accountPages/AccountPage.js"></script>
+<script type="text/javascript" src="js/objects/accountPages/Login.js"></script>
 <script>
-    var user = new User();
+    var login = new Login();
 </script>
