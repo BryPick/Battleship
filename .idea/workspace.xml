@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1950da18-ab74-4ade-91e2-9eabe60e2a9e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/_custom.scss" beforeDir="false" afterPath="$PROJECT_DIR$/css/_custom.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/styles.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/business/lobby/LobbyData.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/business/lobby/LobbyData.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/service/lobby/LobbySvc.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/service/lobby/LobbySvc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/service/login/LoginSvc.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/service/login/LoginSvc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/service/user/UserSvc.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/service/user/UserSvc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/AjaxFunction.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/AjaxFunction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/objects/game/game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/objects/accountPages/CreateAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/objects/accountPages/CreateAccount.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/objects/accountPages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/objects/accountPages/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/objects/lobby/Lobby.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/objects/lobby/Lobby.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/objects/user/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/objects/user/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/layouts/top_layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/layouts/top_layout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lobby.php" beforeDir="false" afterPath="$PROJECT_DIR$/lobby.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/objects/game/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/objects/game/game.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +33,7 @@
           <entry key="css" value="6" />
           <entry key="js" value="54" />
           <entry key="php" value="115" />
-          <entry key="scss" value="27" />
+          <entry key="scss" value="30" />
           <entry key="ts" value="1" />
         </counts>
       </usages-collector>
@@ -57,14 +42,14 @@
           <entry key="CSS" value="6" />
           <entry key="JavaScript" value="54" />
           <entry key="PHP" value="115" />
-          <entry key="SCSS" value="27" />
+          <entry key="SCSS" value="30" />
           <entry key="TypeScript" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="40" />
-          <entry key="js" value="21700" />
+          <entry key="js" value="21767" />
           <entry key="php" value="20927" />
           <entry key="scss" value="3706" />
         </counts>
@@ -73,7 +58,7 @@
         <counts>
           <entry key="CSS" value="1" />
           <entry key="HTML" value="26" />
-          <entry key="JavaScript" value="21699" />
+          <entry key="JavaScript" value="21766" />
           <entry key="PHP" value="20868" />
           <entry key="PLAIN_TEXT" value="40" />
           <entry key="SCSS" value="3706" />
@@ -88,10 +73,10 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.542524">
+    <splitter split-orientation="horizontal" split-proportion="0.3340192">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/objects/user/User.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="255">
@@ -103,11 +88,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/game.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+                <state relative-caret-position="221">
+                  <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
                 </state>
               </provider>
             </entry>
@@ -115,8 +100,17 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/css/_custom.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="478">
+                <state relative-caret-position="561">
                   <caret line="33" column="8" lean-forward="true" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/css/_core.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="102">
+                  <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
                 </state>
               </provider>
             </entry>
@@ -125,11 +119,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/objects/game/game.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="13" selection-start-line="13" selection-end-line="13" />
+                <state relative-caret-position="238">
+                  <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -137,7 +131,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lobby.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="321">
@@ -281,9 +275,9 @@
         <option value="$PROJECT_DIR$/inc/service/game/GameSvc.php" />
         <option value="$PROJECT_DIR$/js/objects/user/User.js" />
         <option value="$PROJECT_DIR$/inc/business/game/GameData.class.php" />
-        <option value="$PROJECT_DIR$/js/objects/game/game.js" />
         <option value="$PROJECT_DIR$/game.php" />
         <option value="$PROJECT_DIR$/lobby.php" />
+        <option value="$PROJECT_DIR$/js/objects/game/game.js" />
       </list>
     </option>
   </component>
@@ -315,6 +309,11 @@
               <item name="Battleship" type="b2602c69:ProjectViewProjectNode" />
               <item name="Battleship" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Battleship" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Battleship" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Battleship" type="b2602c69:ProjectViewProjectNode" />
@@ -514,12 +513,12 @@
       <workItem from="1543299376603" duration="6231000" />
       <workItem from="1543335562232" duration="1251000" />
       <workItem from="1544031561974" duration="24452000" />
-      <workItem from="1544129726297" duration="27178000" />
+      <workItem from="1544129726297" duration="27774000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="247564000" />
+    <option name="totallyTimeSpent" value="248160000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -651,13 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/_core.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logout.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -686,13 +678,6 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/_variables.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -745,13 +730,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/mid.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -780,13 +758,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/_custom.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="33" column="8" lean-forward="true" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/objects/lobby/Lobby.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -811,6 +782,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lobby.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="135" column="18" lean-forward="true" selection-start-line="135" selection-start-column="18" selection-end-line="135" selection-end-column="18" />
+          <folding>
+            <element signature="n#div#1;n#!!top" />
+            <element signature="n#div#2;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/app.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/_variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/_custom.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="8" lean-forward="true" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/_core.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/objects/user/User.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -823,28 +840,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/objects/game/game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="238">
+          <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lobby.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="135" column="18" lean-forward="true" selection-start-line="135" selection-start-column="18" selection-end-line="135" selection-end-column="18" />
-          <folding>
-            <element signature="n#div#1;n#!!top" />
-            <element signature="n#div#2;n#!!top" />
           </folding>
         </state>
       </provider>

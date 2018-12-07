@@ -11,5 +11,5 @@ Game.prototype = new AjaxFunction();
 
 //Game init function
 Game.prototype.init = function() {
-
+    $("body").css("background","url(img/battleshipbackground.jpg)");
 };//end Game.init
