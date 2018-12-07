@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1950da18-ab74-4ade-91e2-9eabe60e2a9e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/js/objects/game/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/objects/game/game.js" afterDir="false" />
-    </list>
+    <list default="true" id="1950da18-ab74-4ade-91e2-9eabe60e2a9e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +12,7 @@
     <session id="603004783">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="22" />
+          <entry key="project.closed" value="23" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="10" />
           <entry key="project.open.time.10" value="1" />
@@ -122,8 +120,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/objects/game/game.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+                <state relative-caret-position="153">
+                  <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -513,16 +511,15 @@
       <workItem from="1543299376603" duration="6231000" />
       <workItem from="1543335562232" duration="1251000" />
       <workItem from="1544031561974" duration="24452000" />
-      <workItem from="1544129726297" duration="27774000" />
+      <workItem from="1544129726297" duration="27961000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="248160000" />
+    <option name="totallyTimeSpent" value="248347000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2228145" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -840,8 +837,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/objects/game/game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        <state relative-caret-position="153">
+          <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
