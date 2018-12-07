@@ -46,4 +46,15 @@ class LobbyData {
             return false;
         }
     }//end insertChatMsg
+
+    function getLoggedOutUsers() {
+        $sqlQuery = "SELECT * FROM users WHERE loggedIn = :loggedIn";
+        $params = array(":loggedIn" => "No");
+        $result = $this->ExecuteQuery->executeQuery($sqlQuery, $params, 'select');
+        if($result) {
+            return $result;
+        }else {
+            return null;
+        }
+    }//end updateLoggedOutUsers
 }

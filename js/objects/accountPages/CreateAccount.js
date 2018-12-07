@@ -63,7 +63,7 @@ CreateAccount.prototype.createUser = function() {
                     CreateAccount.showUserMsg('Passwords don\'t match!', 'alert-danger');
                 } else {
                     var usernameData = {username: username};
-                    var checkExistingUser = CreateAccount.ajaxCall('post', {service: 'createAccount', func: 'checkExistingUser', data: usernameData});
+                    var checkExistingUser = CreateAccount.ajaxCall('post', true, {service: 'createAccount', func: 'checkExistingUser', data: usernameData});
                     $('.user-forms').hide();
                     $('#battleship-load').show();
                     $.when(checkExistingUser).then(function (checkExistingUser) {
@@ -84,7 +84,7 @@ CreateAccount.prototype.createUser = function() {
                                 icon: icon,
                                 loggedIn: isLoggedIn
                             };
-                            var createUser = CreateAccount.ajaxCall('post', {service: 'createAccount', func: 'createUser', data: data});
+                            var createUser = CreateAccount.ajaxCall('post', true, {service: 'createAccount', func: 'createUser', data: data});
                             $.when(createUser).then(function (createUserRes) {
                                 if (createUserRes) {
                                     CreateAccount.showUserMsg('Success! User created!', 'alert-success');

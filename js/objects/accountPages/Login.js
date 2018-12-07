@@ -23,15 +23,17 @@ Login.prototype.checkCreds = function() {
             Login.showUserMsg('Not all fields were entered', 'alert-warning');
         }else {
             var data = {username: username, password: password};
-            var checkedCreds = Login.ajaxCall('get', {service: 'login', func: 'checkCreds', data: data});
+            var checkedCreds = Login.ajaxCall('get', true, {service: 'login', func: 'checkCreds', data: data});
             $('.user-forms').hide();
             $('#battleship-load').show();
             $.when(checkedCreds).then(function (checkedCredsRes) {
                 $('#battleship-load').hide();
                 $('.user-forms').show();
-                if (checkedCredsRes['credsCorrect']) {
+                if (checkedCredsRes['credsCorrect'] == true) {
                     Login.showUserMsg('Success! Logging you in!', 'alert-success');
                     window.location.replace("lobby.php");
+                } else if(checkedCredsRes['credsCorrect'] === 'Error'){
+                    Login.showUserMsg('Error Logging In! Contact Admin!', 'alert-danger');
                 } else {
                     Login.showUserMsg('Username or password incorrect!', 'alert-danger');
                 }

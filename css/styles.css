@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Ironstrike Black";
   src: url("../fonts/Ironstrike Black.otf");
@@ -35,6 +36,10 @@ body {
 }
 
 /* CLASSES */
+.bad-msg {
+  color: #DE1A1A;
+}
+
 .chat-err-msg {
   color: #DE1A1A;
 }
@@ -55,6 +60,21 @@ body {
 .forms {
   margin: auto;
   width: 500px;
+}
+
+.good-msg {
+  color: #008148;
+}
+
+.loading:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(4, end) 900ms infinite;
+  animation: ellipsis steps(4, end) 900ms infinite;
+  content: "…";
+  /* ascii code for the ellipsis character */
+  width: 0px;
 }
 
 .lobby-heading {
@@ -127,10 +147,18 @@ body {
   cursor: pointer;
 }
 
+.user-row {
+  cursor: pointer;
+}
+
 /* IDs */
 #battleship-load {
   display: none;
   margin: auto;
+}
+
+#chall-err-msg {
+  color: #DE1A1A;
 }
 
 #challenge-btns {
@@ -192,6 +220,7 @@ body {
 #lobby-top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 #login-redirect, #login-redirect a, #login-redirect a:hover {
@@ -210,9 +239,21 @@ body {
   width: 95%;
 }
 
+#new-challenge .modal-header {
+  border-bottom: none;
+}
+
+#new-challenge-body .table {
+  display: none;
+}
+
+#rmve-player-btn {
+  float: right;
+}
+
 #user-challenge {
   width: 30%;
-  height: 25%;
+  height: 30%;
   position: absolute;
   left: 0;
   top: 5%;
@@ -292,6 +333,18 @@ body {
 
 textarea {
   resize: none;
+}
+
+/* KEYFRAMES */
+@keyframes ellipsis {
+  to {
+    width: 20px;
+  }
+}
+@-webkit-keyframes ellipsis {
+  to {
+    width: 20px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

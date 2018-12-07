@@ -5,6 +5,7 @@
         return $UserData = new UserData();
     }//end createUserDataObj
 
+    //Handle logout of a user
     function logout($data) {
         $UserData = createUserDataObj();
         $loggedOut = $UserData->logout($data);

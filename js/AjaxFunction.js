@@ -7,11 +7,12 @@ function AjaxFunction() {}//end AjaxFunction constructor
  * @param method - 'get' or 'post' request
  * @param data - the data to send -> {}
  * */
-AjaxFunction.prototype.ajaxCall = function(method, data) {
+AjaxFunction.prototype.ajaxCall = function(method, async, data) {
     return $.ajax({
         type: method,
         data: data,
         dataType: 'json',
-        url: 'inc/mid.php'
+        url: 'inc/mid.php',
+        async: async
     });
 };//end AjaxFunction.ajaxCall

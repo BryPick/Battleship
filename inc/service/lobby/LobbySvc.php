@@ -61,3 +61,13 @@
             return array('chatMsgSent' => false);
         }
     }//end sendLobbyChatMsg
+
+    function loggedOutUsers() {
+        $LobbyData = createLobbyDataObj();
+        $loggedOutUsers  = $LobbyData->getLoggedOutUsers();
+        if($loggedOutUsers) {
+            return array("loggedOutUsers" => $loggedOutUsers);
+        }else {
+            return array("loggedOutUsers" => null);
+        }
+    }//end loggedOutUsers

@@ -22,6 +22,8 @@
                     $_SESSION['username'] = $userInfo[0]['username'];
                     $_SESSION['icon'] = $userInfo[0]['iconName'];
                     return array('credsCorrect' => true);
+                }else {
+                    return array('credsCorrect' => 'Error');
                 }
             }else {
                 return array('credsCorrect' => false);

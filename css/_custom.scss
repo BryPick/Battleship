@@ -10,6 +10,10 @@
 }
 
 /* CLASSES */
+.bad-msg {
+  color: $red-bg-color;
+}
+
 .chat-err-msg {
   color: $red-bg-color;
 }
@@ -30,6 +34,20 @@
 .forms {
   margin: auto;
   width: 500px;
+}
+
+.good-msg {
+  color: $green-bg-color;
+}
+
+.loading:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(4,end) 900ms infinite;
+  animation: ellipsis steps(4,end) 900ms infinite;
+  content: "\2026"; /* ascii code for the ellipsis character */
+  width: 0px;
 }
 
 .lobby-heading {
@@ -104,10 +122,18 @@
   cursor: pointer;
 }
 
+.user-row {
+  cursor: pointer;
+}
+
 /* IDs */
 #battleship-load {
   display: none;
   margin: auto;
+}
+
+#chall-err-msg {
+  color: $red-bg-color;
 }
 
 #challenge-btns {
@@ -169,6 +195,7 @@
 #lobby-top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 #login-redirect, #login-redirect a, #login-redirect a:hover {
@@ -188,9 +215,21 @@
   width: 95%;
 }
 
+#new-challenge .modal-header {
+  border-bottom: none;
+}
+
+#new-challenge-body .table {
+  display: none;
+}
+
+#rmve-player-btn {
+  float: right;
+}
+
 #user-challenge {
   width: 30%;
-  height: 25%;
+  height: 30%;
   position: absolute;
   left: 0;
   top: 5%;
@@ -272,4 +311,17 @@
 
 textarea {
   resize: none;
+}
+
+/* KEYFRAMES */
+@keyframes ellipsis {
+  to {
+    width: 20px;
+  }
+}
+
+@-webkit-keyframes ellipsis {
+  to {
+    width: 20px;
+  }
 }

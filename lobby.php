@@ -20,20 +20,20 @@
                     <tbody>
                         <tr>
                             <td><img src="svg/<?php echo $_SESSION['icon'];?>"/></td>
-                            <td><?php echo $_SESSION['username'].' (You)';?></td>
+                            <td id="current-user"><span id="curr-user-username"><?php echo $_SESSION['username'];?></span> (You)</td>
                             <td></td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td>(Select a player)</td>
-                            <td><!--<input type="button" class="btn btn-danger rmve-player-btn" value="Remove"/>--></td>
+                            <td id="challenged-player"><span id="chall-player-username">(Select a player)</span></td>
+                            <td id="remove-btn"></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <div id="challenge-btns">
                 <input type="button" class="btn btn-secondary" id="settings-btn" value="Match Settings"/>
-                <input type="button" class="btn btn-danger" id="start-match-btn" value="Start Match"/>
+                <input type="button" class="btn btn-danger" id="start-match-btn" data-toggle="modal" data-target="#game-popup" value="Start Match"/>
             </div>
         </div>
         <div id="user-lobby">
@@ -78,10 +78,61 @@
                     <p class="user-menu-option" data-dismiss="modal">Exit User Menu</p>
                     <p class="user-menu-option" id="logout-menu-option">Logout</p>
                 </div>
-                <!--<div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-danger">Logout</button>
-                </div>-->
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="cancel-game-popup" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title col-12 text-center" id="cancel-game-popup-label"></h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="cancel-game-cancel" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" id="cancel-game-confirm" class="btn btn-danger">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="challenge-popup" tabindex="-1" role="dialog" aria-labelledby="challenge-label" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title col-12 text-center" id="challenge-label"></h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="close-chall-btn" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" id="challenge-btn">Challenge</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="game-popup" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title col-12 text-center" id="game-popup-label"></h5>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="conf-cancel-game" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" id="conf-start-game" class="btn btn-danger">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="new-challenge" tabindex="-1" role="dialog" aria-labelledby="new-challenge" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title col-12 text-center" id="new-challenge-label"></h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="decline-chall-btn" data-dismiss="modal">Decline</button>
+                    <button type="button" class="btn btn-success" id="accept-chall-btn">Accept</button>
+                </div>
             </div>
         </div>
     </div>
@@ -91,6 +142,6 @@
 <script type="text/javascript" src="js/objects/user/User.js"></script>
 <script type="text/javascript" src="js/objects/lobby/Lobby.js"></script>
 <script>
-    var user = new User(<?php echo $_SESSION['userID'].',\''.$_SESSION['username'].'\',\''.$_SESSION['icon'].'\''?>);
-    var lobby = new Lobby();
+    let user = new User(<?php echo $_SESSION['userID'].',\''.$_SESSION['username'].'\',\''.$_SESSION['icon'].'\''?>);
+    let lobby = new Lobby();
 </script>
