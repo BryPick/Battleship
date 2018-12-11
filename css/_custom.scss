@@ -9,9 +9,25 @@
   color: $heading-color;
 }
 
+%btn-warning-colors {
+  background: $yellow-click-color;
+  border-color: $yellow-border-color;
+  color: white;
+}
+
+/* SVG STYLING */
+.cls-1{fill:#ced3dc;stroke:#000;stroke-miterlimit:10;}
+
 /* CLASSES */
 .bad-msg {
   color: $red-bg-color;
+}
+
+.battleship_cell {
+  fill: $ocean-blue;
+  fill-opacity: .85;
+  stroke-width: 2px;
+  stroke: black;
 }
 
 .chat-err-msg {
@@ -98,6 +114,11 @@
   color: black;
 }
 
+.ship-placement {
+  fill: black;
+  fill-opacity: .85;
+}
+
 .sub-logo {
   @extend %main-logo;
   font-size: 7vw;
@@ -132,6 +153,27 @@
   margin: auto;
 }
 
+#boards-container {
+  position: relative;
+  float: left;
+  width: 70%;
+  height: 100%;
+}
+
+#boards-container svg {
+  display: block;
+  margin: 1% auto 0;
+}
+
+#boards-control {
+  display: flex;
+  width: 700px;
+  height: 15%;
+  margin: 0 auto;
+  justify-content: space-around;
+  align-items: center;
+}
+
 #chall-err-msg {
   color: $red-bg-color;
 }
@@ -153,18 +195,58 @@
 }
 
 #chat-box {
-  background: rgba(0,0,0,.75);
   font-weight: bold;
   color: $heading-color;
-  min-height: 75%;
-  max-height: 75%;
+  height: 75%;
   overflow: auto;
+  background: black;
 }
 
 #err-heading {
   font-family: $font-family-headings;
   color: $heading-color;
   font-size: 50pt;
+}
+
+#game-boards {
+  height: 70%;
+}
+
+#game-chat {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20%;
+  background: $black-game-bg;
+}
+
+#game-chat-box {
+  height: 150px;
+  color: white;
+  font-weight: bold;
+  overflow-y: auto;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+#game-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#game-input-chat-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+#hud-container {
+  position: relative;
+  float: right;
+  width: 30%;
+  height: 100%;
+  background-color: $black-game-bg;
 }
 
 #input-chat-text {
@@ -223,8 +305,98 @@
   display: none;
 }
 
+#opponents-board {
+  display: none;
+}
+
+#rader-alert-msg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $lobby-font;
+  font-size: 8vh;
+}
+
+#radar-hit-msg {
+  color: $red-bg-color;
+}
+
+#radar-miss-msg {
+  color: white;
+}
+
+#radar-msg-update {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 10px;
+  width: 350px;
+  height: 350px;
+}
+
+#radar-msg-update img {
+  width: 100%;
+  height: 100%;
+}
+
 #rmve-player-btn {
   float: right;
+}
+
+#ship-names {
+  position: absolute;
+  display: flex;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 50px;
+  width: 80%;
+  height: 35%;
+  align-items: center;
+}
+
+#ship-names-txt {
+  color: white;
+  font-family: $lobby-font;
+  font-size: 2.5vh;
+  width: 100%;
+}
+
+#ship-names-txt hr {
+  border: 2px solid white;
+  width: 100%;
+}
+
+#turn-tracker {
+  position: absolute;
+  width: 100%;
+  height: 5%;
+  display: flex;
+  top: 400px;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  font-family: $lobby-font;
+  font-size: 2.5vh;
+}
+
+#turn-tracker input[type='radio'] {
+  margin-right: 5px;
+  background-color: $heading-color;
+}
+
+#turn-tracker input[type="radio"].with-gap:checked+label:after {
+  background-color: #FFA500 !important;
+}
+
+#turn-tracker input[type="radio"].with-gap:checked+label:before,
+[type="radio"].with-gap:checked+label:after {
+  border: 2px solid #FFA500 !important;
 }
 
 #user-challenge {
@@ -289,6 +461,34 @@
 
 .btn-danger:hover {
   background: $red-hover-color;
+}
+
+.btn-warning {
+  background: $heading-color;
+  border-color: $yellow-border-color;
+  color: white;
+}
+
+.btn-warning:active {
+  @extend %btn-warning-colors;
+}
+
+.btn-warning:focus {
+  @extend %btn-warning-colors;
+}
+
+.btn-warning:disabled {
+  border-color: $yellow-border-color;
+  color: white;
+}
+
+.btn-warning:hover {
+  background: $yellow-hover-color;
+  color: white;
+}
+
+.btn-warning:visited {
+  @extend %btn-warning-colors;
 }
 
 .btn-success {

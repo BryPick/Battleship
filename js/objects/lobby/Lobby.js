@@ -11,6 +11,7 @@ Lobby.prototype = new AjaxFunction();
 Lobby.prototype.init = function() {
     this.getLoggedInUsers();
     this.getChat();
+    this.keepScrollBottom();
     this.updateLoggedOutUsers();
 };//end Lobby.init
 
@@ -108,6 +109,12 @@ Lobby.prototype.getChat = function() {
         });
     }, 1000);
 };//end Lobby.getChat
+
+//Keeps overflow scrollbar at the bottom when new messages are added
+Lobby.prototype.keepScrollBottom = function() {
+    let lobbyChatBox = document.querySelector("#chat-box");
+    lobbyChatBox.scrollTop = lobbyChatBox.scrollHeight - lobbyChatBox.clientHeight;
+};//end Game.keepScrollBottom
 
 Lobby.prototype.updateLoggedOutUsers = function() {
     var lobby = this;

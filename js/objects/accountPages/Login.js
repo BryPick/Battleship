@@ -33,12 +33,12 @@ Login.prototype.checkCreds = function() {
                     Login.showUserMsg('Success! Logging you in!', 'alert-success');
                     window.location.replace("lobby.php");
                 } else if(checkedCredsRes['credsCorrect'] === 'Error'){
-                    Login.showUserMsg('Error Logging In! Contact Admin!', 'alert-danger');
+                    Login.showUserMsg('Error logging in! Contact admin!', 'alert-danger');
                 } else {
                     Login.showUserMsg('Username or password incorrect!', 'alert-danger');
                 }
             }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
-                Login.showUserMsg('Fail! Contact Admin!', 'alert-danger');
+                Login.showUserMsg('Fail! Contact admin!', 'alert-danger');
             });
         }
     });

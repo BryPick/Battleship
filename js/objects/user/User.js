@@ -59,9 +59,22 @@ User.prototype.acceptChallenge = function() {
                             $("#new-challenge").find(".modal-title").text("");
                             $("#new-challenge").find(".modal-title").removeClass("loading");
                             $("#new-challenge").find(".modal-title").append($("<span>").addClass("good-msg").text("Match started"));
-                            setTimeout(function() {
-                                window.location.replace("game.php?gameID="+User.challengeID);
-                            }, 1000);
+                            //Create session variables for game
+                            let data2 = {player2ID: User.id, gameID: User.challengeID};
+                            let userSessions = User.ajaxCall('post', true, {service: "game", func: "createUserSessionVars", data: data2});
+                            $.when(userSessions).then(function(sessions) {
+                                if(sessions['sessionsSet']) {
+                                    setTimeout(function() {
+                                        window.location.replace("game.php?gameID="+User.challengeID);
+                                    }, 1000);
+                                }else {
+                                    $("#game-popup-label").text("");
+                                    $("#game-popup-label").append($("<span>").addClass("bad-msg").text("Game could not be started"));
+                                }
+                            }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                                $("#game-popup-label").text("");
+                                $("#game-popup-label").append($("<span>").addClass("bad-msg").text("Game could not be started"));
+                            });
                         }else if(gameStatus['gameStatus'] === "Cancelled") {
                             //If the game has been cancelled
                             clearInterval(timer);
@@ -309,6 +322,7 @@ User.prototype.sendChatMsg = function() {
     $("#chat-input").keypress(function(event){
         var keycode = (event.keyCode ? event.keyCode : event.which);
         var msg = $("#chat-input").val();
+        //When user presses enter key
         if(keycode == '13' && msg !== ''){
             var data = {userID: User.id, username: User.username, msg: msg};
             var chatMsgSent = User.ajaxCall('post', true, {service: 'lobby', func: 'sendLobbyChatMsg', data: data});
@@ -336,9 +350,23 @@ User.prototype.startMatch = function() {
                 $("#game-popup").find(".modal-body").hide();
                 $("#game-popup").find(".modal-footer").hide();
                 $("#game-popup-label").append($("<span>").addClass("good-msg").text("Match started!"));
-                setTimeout(function() {
-                    window.location.replace("game.php?gameID="+User.challengeID);
-                }, 1000);
+
+                //Create session variables for game
+                let data2 = {player1ID: User.id, gameID: User.challengeID};
+                let userSessions = User.ajaxCall('post', true, {service: "game", func: "createUserSessionVars", data: data2});
+                $.when(userSessions).then(function(sessions) {
+                    if(sessions['sessionsSet']) {
+                        setTimeout(function() {
+                            window.location.replace("game.php?gameID="+User.challengeID);
+                        }, 1000);
+                    }else {
+                        $("#game-popup-label").text("");
+                        $("#game-popup-label").append($("<span>").addClass("bad-msg").text("Game could not be started"));
+                    }
+                }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                    $("#game-popup-label").text("");
+                    $("#game-popup-label").append($("<span>").addClass("bad-msg").text("Game could not be started"));
+                });
             }else {
                 $("#game-popup-label").text("");
                 $("#game-popup-label").append($("<span>").addClass("bad-msg").text("Game could not be started"));

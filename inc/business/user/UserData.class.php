@@ -21,6 +21,22 @@ class UserData {
         }
     }//end getUser
 
+    /* Function to get the username based on the userID
+     * @param $id - the userID
+     * @return $result[0]['username'] - the desired username
+     * @return null - return null if no username exists
+     * */
+    function getUsername($id) {
+        $sqlQuery = 'SELECT * FROM users WHERE userID = :ID';
+        $params = array(':ID' => $id);
+        $result = $this->ExecuteQuery->executeQuery($sqlQuery, $params, 'select');
+        if($result) {
+            return $result[0]['username'];
+        }else {
+            return null;
+        }
+    }//end getUsername
+
     /* Function to create a new user
      * @param $data - necessary data to do MySQL query
      * @return $result - specifying if user was inserted

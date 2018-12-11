@@ -1,6 +1,7 @@
 <?php
     require_once(__DIR__ . '/../../business/user/UserData.class.php');
 
+    //Create UserData object
     function createUserDataObj() {
         return $UserData = new UserData();
     }//end createUserDataObj

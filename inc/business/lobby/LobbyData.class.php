@@ -5,10 +5,9 @@ class LobbyData {
         $this->ExecuteQuery = new ExecuteQuery();
     }//end __construct LobbyData
 
-    function getChat($datetime) {
+    function getChat() {
         $sqlQuery = "SELECT * FROM lobbychat order by timeOfMsg DESC LIMIT 1";
-        $params = array(":dateTime" => $datetime);
-        $result = $this->ExecuteQuery->executeQuery($sqlQuery, $params, 'select');
+        $result = $this->ExecuteQuery->executeQuery($sqlQuery, $this->ExecuteQuery->paramsIsZero(), 'select');
         if($result) {
             return $result;
         }else {
@@ -31,6 +30,11 @@ class LobbyData {
         }
     }//end getLoggedInUsers
 
+    /* Function to insert chat message to lobby chat
+     * @param $data - necessary data to insert lobby chat
+     * @param $datetime - the time the message will be sent
+     * @return boolean - return true or false if message was successfully inserted
+     * */
     function insertChatMsg($data, $datetime) {
         $sqlQuery = "INSERT INTO lobbychat VALUES (:userID, :username, :msg, :dateTime)";
         $params = array(

@@ -1,6 +1,7 @@
 <?php
     require_once(__DIR__ . '/../../business/lobby/LobbyData.class.php');
     session_start();
+
     /* Function to create lobby data object
      * Will help when calling LobbyData object in other functions
      * @return $LobbyData - LobbyData object
@@ -9,10 +10,12 @@
         return $LobbyData = new LobbyData();
     }//end createLobbyDataObj
 
+    /* Function to get the lobby chat messages
+     * @return array - associative array with chat messages or null
+     * */
     function getChat() {
         $LobbyData = createLobbyDataObj();
-        $datetime = date('Y-m-d H:i:s', time());;
-        $getChat = $LobbyData->getChat($datetime);
+        $getChat = $LobbyData->getChat();
         if($getChat) {
             //Check if session variable is set (helps see if the user just logged to the lobby)
             if(isset($_SESSION['timeOfLastMsg'])) {
@@ -49,6 +52,8 @@
     }//end getLoggedInUsers
 
     /* Function to send user lobby chat msg
+     * @param $data - the data necessary to send lobby message
+     * @return array - return associative array with true or false
      * */
     function sendLobbyChatMsg($data) {
         $LobbyData = createLobbyDataObj();
