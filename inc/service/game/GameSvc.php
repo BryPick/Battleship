@@ -3,6 +3,20 @@
     require_once(__DIR__.'/../../business/game/GameData.class.php');
     require_once(__DIR__ . '/../../business/user/UserData.class.php');
 
+    //Assign turn to a player
+    function assignTurn($gameID) {
+        $GameData = createGameDataObj();
+        $players = array("Player1","Player2");
+        //Random choice between player 1 and 2
+        $playerNum = $players[rand(1, 100) > 50 ? 1 : 0];
+        $assignTurnRes = $GameData->assignTurn($playerNum, $gameID);
+        if($assignTurnRes) {
+            return true;
+        }else {
+            return false;
+        }
+    }//end assignTurn
+
     //Cancel game by updating game table
     function cancelGame($data) {
         $GameData = createGameDataObj();
@@ -24,6 +38,39 @@
             return array("gameStatus" => null);
         }
     }//end checkGameStatus
+
+    /* Function to check opponent's setup status
+     * @param $data - data necessary to check opponent's status
+     * @return array - associative array containing
+     * */
+    function checkOppSetupStatus($data) {
+        $GameData = createGameDataObj();
+        $oppStatus = $GameData->checkOppSetupStatus($data);
+        if($oppStatus == "Ready") {
+            $assignTurnRes = assignTurn($data['gameID']);
+            if($assignTurnRes) {
+                return array("oppStatus" => $oppStatus);
+            }else {
+                return array("oppStatus" => "Error");
+            }
+        }else {
+            return array("oppStatus" => $oppStatus);
+        }
+    }//end checkOppSetupStatus
+
+    /* Function to check who's turn it is
+     * @param $data - the data necessary to check the turn
+     * @return array - associative indicating if a player's turn was found
+     * */
+    function checkTurn($data) {
+        $GameData = createGameDataObj();
+        $currPlayersTurn = $GameData->checkTurn($data);
+        if($currPlayersTurn) {
+            return array("currPlayersTurn" => $currPlayersTurn);
+        }else {
+            return array("currPlayersTurn" => null);
+        }
+    }//end checkTurn
 
     //Create the GameData object to use throughout the file
     function createGameDataObj() {
@@ -81,6 +128,30 @@
         }
     }//end createUserSessionVars
 
+    /* Function to tell the database that the user is done setting up ships
+     * @param $data - data necessary to finish setup
+     * @return array - associative array saying if the update was successful
+     * */
+    function finishSetup($data) {
+        $GameData = createGameDataObj();
+        $setupStatus = $GameData->finishSetup($data);
+        if($setupStatus) {
+            return array("setupStatus" => $setupStatus);
+        }else {
+            return array("setupStatus" => $setupStatus);
+        }
+    }//end finishSetup
+
+    function fireShot($data) {
+        $GameData = createGameDataObj();
+        $shotResult = $GameData->fireShot($data);
+        if($shotResult) {
+            return array("fireShotResult" => $shotResult);
+        }else {
+            return array("fireShotResult" => $shotResult);
+        }
+    }//end fireShot
+
     /* Function to get the game chat messages
      * @return array - associative array with chat messages or null
      * */
@@ -107,6 +178,26 @@
         }
     }//end getChat
 
+    function getGuess($data) {
+        $GameData = createGameDataObj();
+        $getGuess = $GameData->getGuess($data);
+        if($getGuess) {
+            return array("guess" => $getGuess);
+        }else {
+            return array("guess" => null);
+        }
+    }//end getGuess
+
+    function getResult($data) {
+        $GameData = createGameDataObj();
+        $getResult = $GameData->getResult($data);
+        if($getResult) {
+            return array("result" => $getResult);
+        }else {
+            return array("result" => null);
+        }
+    }//end getResult
+
     /* Function to send game chat msg
      * @param $data - the data necessary to send game message
      * @return array - return associative array with true or false
@@ -123,6 +214,16 @@
         }
     }//end sendGameChatMsg
 
+    function sendResult($data) {
+        $GameData = createGameDataObj();
+        $sendResult = $GameData->sendResult($data);
+        if($sendResult) {
+            return array("sendResult" => true);
+        }else {
+            return array("sendResult" => false);
+        }
+    }//end sendResult
+
     //Start game by changing game status to "Started"
     function startGame($data) {
         $GameData = createGameDataObj();
@@ -133,3 +234,14 @@
             return array("startGameRes" => $startGameRes);
         }
     }//end startGame
+
+    //Update the guess result to null
+    function updateGuessResult($data) {
+        $GameData = createGameDataObj();
+        $updateResult = $GameData->updateGuessResult($data);
+        if($updateResult) {
+            return array("updateResult" => $updateResult);
+        }else {
+            return array("updateResult" => $updateResult);
+        }
+    }//end updateGuessResult

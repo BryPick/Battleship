@@ -168,6 +168,11 @@ body {
   margin: auto;
 }
 
+.user-icon {
+  width: 35px;
+  height: 35px;
+}
+
 .user-menu-option {
   cursor: pointer;
 }
@@ -237,6 +242,10 @@ body {
   font-size: 50pt;
 }
 
+#fire-btn {
+  display: none;
+}
+
 #game-boards {
   height: 70%;
 }
@@ -268,6 +277,18 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+#hide-chat {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  width: 100%;
+}
+
+#hit-square {
+  fill: #DE1A1A;
 }
 
 #hud-container {
@@ -325,6 +346,10 @@ body {
   width: 95%;
 }
 
+#miss-square {
+  fill: white;
+}
+
 #new-challenge .modal-header {
   border-bottom: none;
 }
@@ -353,10 +378,12 @@ body {
 
 #radar-hit-msg {
   color: #DE1A1A;
+  display: none;
 }
 
 #radar-miss-msg {
   color: white;
+  display: none;
 }
 
 #radar-msg-update {
@@ -405,7 +432,7 @@ body {
   width: 100%;
   height: 5%;
   display: flex;
-  top: 400px;
+  top: 375px;
   justify-content: space-around;
   align-items: center;
   color: white;

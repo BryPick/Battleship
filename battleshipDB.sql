@@ -15,10 +15,6 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-DROP DATABASE IF EXISTS battleship;
-CREATE DATABASE battleship;
-USE battleship;
-
 --
 -- Table structure for table `board1`
 --
@@ -114,7 +110,7 @@ CREATE TABLE `challenge` (
   `challengedUsername` varchar(45) DEFAULT NULL,
   `result` enum('Accepted','Declined','Pending') NOT NULL,
   PRIMARY KEY (`challengeID`)
-) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -123,7 +119,6 @@ CREATE TABLE `challenge` (
 
 LOCK TABLES `challenge` WRITE;
 /*!40000 ALTER TABLE `challenge` DISABLE KEYS */;
-INSERT INTO `challenge` VALUES (1,6,'bryanp21',7,'bryP22','Accepted'),(2,6,'bryanp21',7,'bryP22','Declined'),(3,6,'bryanp21',7,'bryP22','Declined'),(4,6,'bryanp21',7,'bryP22','Accepted'),(5,7,'bryP22',6,'bryanp21','Declined'),(6,7,'bryP22',6,'bryanp21','Declined'),(7,6,'bryanp21',7,'bryP22','Declined'),(8,6,'bryanp21',7,'bryP22','Accepted'),(9,6,'bryanp21',7,'bryP22','Accepted'),(10,6,'bryanp21',7,'bryP22','Accepted'),(11,7,'bryP22',6,'bryanp21','Accepted'),(12,6,'bryanp21',7,'bryP22','Accepted'),(13,6,'bryanp21',7,'bryP22','Accepted'),(14,6,'bryanp21',7,'bryP22','Accepted'),(15,6,'bryanp21',7,'bryP22','Accepted'),(16,7,'bryP22',6,'bryanp21','Accepted'),(17,6,'bryanp21',7,'bryP22','Accepted'),(18,6,'bryanp21',7,'bryP22','Accepted'),(19,6,'bryanp21',7,'bryP22','Accepted'),(20,6,'bryanp21',7,'bryP22','Accepted'),(21,6,'bryanp21',7,'bryP22','Accepted'),(22,6,'bryanp21',7,'bryP22','Accepted'),(23,6,'bryanp21',7,'bryP22','Accepted'),(24,6,'bryanp21',7,'bryP22','Accepted'),(25,6,'bryanp21',7,'bryP22','Accepted'),(26,6,'bryanp21',7,'bryP22','Accepted'),(27,6,'bryanp21',7,'bryP22','Accepted'),(28,7,'bryP22',6,'bryanp21','Accepted'),(29,6,'bryanp21',7,'bryP22','Accepted'),(30,6,'bryanp21',7,'bryP22','Accepted'),(31,6,'bryanp21',7,'bryP22','Accepted'),(32,6,'bryanp21',7,'bryP22','Accepted'),(33,6,'bryanp21',7,'bryP22','Accepted'),(34,6,'bryanp21',7,'bryP22','Accepted'),(35,6,'bryanp21',7,'bryP22','Accepted'),(36,6,'bryanp21',7,'bryP22','Accepted'),(37,6,'bryanp21',7,'bryP22','Accepted'),(38,6,'bryanp21',7,'bryP22','Accepted'),(39,6,'bryanp21',7,'bryP22','Accepted'),(40,6,'bryanp21',7,'bryP22','Accepted'),(41,6,'bryanp21',7,'bryP22','Accepted'),(42,6,'bryanp21',7,'bryP22','Accepted'),(43,6,'bryanp21',7,'bryP22','Accepted'),(44,6,'bryanp21',7,'bryP22','Accepted'),(45,6,'bryanp21',7,'bryP22','Accepted'),(46,6,'bryanp21',7,'bryP22','Accepted'),(47,6,'bryanp21',7,'bryP22','Accepted'),(48,6,'bryanp21',7,'bryP22','Accepted'),(49,6,'bryanp21',7,'bryP22','Declined'),(50,6,'bryanp21',7,'bryP22','Accepted'),(51,6,'bryanp21',7,'bryP22','Accepted'),(52,6,'bryanp21',7,'bryP22','Accepted'),(53,6,'bryanp21',7,'bryP22','Declined'),(54,6,'bryanp21',7,'bryP22','Accepted'),(55,6,'bryanp21',7,'bryP22','Declined'),(56,6,'bryanp21',7,'bryP22','Accepted'),(57,6,'bryanp21',7,'bryP22','Accepted'),(58,6,'bryanp21',7,'bryP22','Declined'),(59,6,'bryanp21',7,'bryP22','Accepted'),(60,6,'bryanp21',7,'bryP22','Accepted'),(61,7,'bryP22',6,'bryanp21','Accepted'),(62,7,'bryP22',6,'bryanp21','Accepted'),(63,7,'bryP22',6,'bryanp21','Declined'),(64,7,'bryP22',6,'bryanp21','Declined'),(65,7,'bryP22',6,'bryanp21','Accepted'),(66,7,'bryP22',6,'bryanp21','Accepted'),(67,7,'bryP22',6,'bryanp21','Declined'),(68,7,'bryP22',6,'bryanp21','Declined'),(69,6,'bryanp21',7,'bryP22','Declined'),(70,6,'bryanp21',7,'bryP22','Accepted'),(71,6,'bryanp21',7,'bryP22','Accepted'),(72,6,'bryanp21',7,'bryP22','Accepted'),(73,6,'bryanp21',7,'bryP22','Accepted'),(74,6,'bryanp21',7,'bryP22','Accepted'),(75,6,'bryanp21',7,'bryP22','Accepted'),(76,6,'bryanp21',7,'bryP22','Accepted'),(77,6,'bryanp21',7,'bryP22','Accepted'),(78,6,'bryanp21',7,'bryP22','Accepted');
 /*!40000 ALTER TABLE `challenge` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -144,8 +139,11 @@ CREATE TABLE `game` (
   `board2PlayerID` int(11) DEFAULT NULL,
   `currentPlayersTurn` enum('Player1','Player2') DEFAULT NULL,
   `currentPlayersGuess` varchar(45) DEFAULT NULL,
+  `currentPlayersGuessResult` varchar(45) DEFAULT NULL,
   `player1SetupStatus` enum('Ready','Setting Up') DEFAULT NULL,
   `player2SetupStatus` enum('Ready','Setting Up') DEFAULT NULL,
+  `player1ShipsLeft` int(11) DEFAULT NULL,
+  `player2ShipsLeft` int(11) DEFAULT NULL,
   `gameStatus` enum('Started','Finished','Setting Up','Cancelled') NOT NULL,
   `winner` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`gameID`),
@@ -162,7 +160,6 @@ CREATE TABLE `game` (
 
 LOCK TABLES `game` WRITE;
 /*!40000 ALTER TABLE `game` DISABLE KEYS */;
-INSERT INTO `game` VALUES (78,6,7,1,1,6,7,NULL,NULL,NULL,NULL,'Started',NULL);
 /*!40000 ALTER TABLE `game` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -176,9 +173,10 @@ DROP TABLE IF EXISTS `gamechat`;
 CREATE TABLE `gamechat` (
   `gameID` int(11) NOT NULL,
   `playerID` int(11) NOT NULL,
+  `playerUsername` varchar(45) NOT NULL,
   `msg` varchar(100) NOT NULL,
   `timeOfMsg` datetime NOT NULL,
-  PRIMARY KEY (`gameID`),
+  PRIMARY KEY (`gameID`,`playerID`,`timeOfMsg`),
   CONSTRAINT `fk_GameChat_Game1` FOREIGN KEY (`gameID`) REFERENCES `game` (`gameid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -214,7 +212,6 @@ CREATE TABLE `lobbychat` (
 
 LOCK TABLES `lobbychat` WRITE;
 /*!40000 ALTER TABLE `lobbychat` DISABLE KEYS */;
-INSERT INTO `lobbychat` VALUES (6,'bryanp21','hi','2018-11-25 10:21:41'),(6,'bryanp21','Hey!','2018-11-27 01:25:35'),(6,'bryanp21','Heyyyyyy','2018-12-05 20:41:59'),(6,'bryanp21','Whatup','2018-12-05 20:42:05'),(6,'bryanp21','Kewl','2018-12-05 20:42:23'),(6,'bryanp21','Still works','2018-12-05 21:36:11'),(6,'bryanp21','Still works bby','2018-12-06 03:04:05'),(6,'bryanp21','woot','2018-12-06 23:20:10'),(6,'bryanp21','woot','2018-12-06 23:20:12'),(6,'bryanp21','Hi','2018-12-06 23:35:20'),(6,'bryanp21','How are you?','2018-12-06 23:35:26'),(7,'bryP22','yo','2018-11-25 10:21:44'),(7,'bryP22','Yo','2018-11-27 01:25:39'),(7,'bryP22','Yo','2018-12-05 20:41:54'),(7,'bryP22','Nothing much','2018-12-05 20:42:14'),(7,'bryP22','ya ya','2018-12-06 03:04:07'),(7,'bryP22','It still works bbabby','2018-12-06 23:20:07'),(7,'bryP22','Hey','2018-12-06 23:35:18'),(7,'bryP22','Pretty good','2018-12-06 23:35:30');
 /*!40000 ALTER TABLE `lobbychat` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -308,4 +305,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-12-07  2:44:16
+-- Dump completed on 2018-12-12  8:11:07

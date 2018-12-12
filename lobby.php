@@ -19,7 +19,7 @@
                 <table class="table table-hover table-dark">
                     <tbody>
                         <tr>
-                            <td><img src="svg/<?php echo $_SESSION['icon'];?>"/></td>
+                            <td><img class="user-icon" src="svg/<?php echo $_SESSION['icon'];?>"/></td>
                             <td id="current-user"><span id="curr-user-username"><?php echo $_SESSION['username'];?></span> (You)</td>
                             <td></td>
                         </tr>

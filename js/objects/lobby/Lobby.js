@@ -69,7 +69,7 @@ Lobby.prototype.getLoggedInUsers = function() {
                             var newTableRow = $("<tr>").addClass('user-row').attr('id', loggedInUsers[i]['userID']);
 
                             var iconTD = $("<td>");
-                            iconTD.append("<img src='svg/" + loggedInUsers[i]['iconName'] + "'/>");
+                            iconTD.append("<img class='user-icon' src='svg/" + loggedInUsers[i]['iconName'] + "'/>");
                             newTableRow.append(iconTD);
 
                             var usernameTD = $("<td>").addClass('username');

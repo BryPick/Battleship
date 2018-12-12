@@ -1,10 +1,11 @@
 /*
 *  Player constructor
 * */
-function Player(gameID, id, username) {
+function Player(gameID, id, username, playerNumber) {
     this.gameID = gameID;
     this.id = id;
     this.username = username;
+    this.playerNumber = playerNumber;
     this.init();
 }//end Player constructor
 
