@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1950da18-ab74-4ade-91e2-9eabe60e2a9e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/_custom.scss" beforeDir="false" afterPath="$PROJECT_DIR$/css/_custom.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/styles.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.php" beforeDir="false" afterPath="$PROJECT_DIR$/game.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/business/game/GameData.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/business/game/GameData.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/service/game/GameSvc.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/service/game/GameSvc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/objects/game/Game.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/objects/game/Game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/objects/game/Player.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/objects/game/Player.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/objects/game/Ship.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/objects/game/Ship.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/objects/lobby/Lobby.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/objects/lobby/Lobby.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lobby.php" beforeDir="false" afterPath="$PROJECT_DIR$/lobby.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/battleshipDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/battleshipDB.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,7 +14,7 @@
     <session id="603004783">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="26" />
+          <entry key="project.closed" value="27" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="13" />
           <entry key="project.open.time.10" value="1" />
@@ -110,7 +98,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/css/_custom.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="389">
+                <state relative-caret-position="629">
                   <caret line="143" column="14" selection-start-line="143" selection-start-column="14" selection-end-line="143" selection-end-column="14" />
                 </state>
               </provider>
@@ -322,7 +310,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1912" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
@@ -495,7 +483,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TestCode/TestJavascriptEvt" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -557,18 +545,17 @@
       <workItem from="1544169935389" duration="507000" />
       <workItem from="1544217925988" duration="16523000" />
       <workItem from="1544287687411" duration="29062000" />
-      <workItem from="1544377584844" duration="104861000" />
+      <workItem from="1544377584844" duration="105718000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="399300000" />
+    <option name="totallyTimeSpent" value="400157000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.040511727" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1663113" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -866,7 +853,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/_custom.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
+        <state relative-caret-position="629">
           <caret line="143" column="14" selection-start-line="143" selection-start-column="14" selection-end-line="143" selection-end-column="14" />
         </state>
       </provider>
